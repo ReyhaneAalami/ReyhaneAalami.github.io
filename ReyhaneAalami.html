@@ -1,0 +1,324 @@
+
+
+Reyhane portfolio v2 · HTML
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#070b17">
+<meta name="description" content="ریحانه اعلمی، مهندس کامپیوتر؛ تحلیل داده، RAG، سیستم‌های توصیه‌گر و وب‌اپلیکیشن">
+<title>ریحانه اعلمی | تحلیل داده، RAG و سیستم‌های توصیه‌گر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:dark;--bg:#070b17;--text:#f3f5ff;--muted:#a7b3d0;--line:rgba(157,174,230,.16);--purple:#8c6bff;--blue:#477bff;--cyan:#5de1ef;--pink:#ff5fa8;--r:22px;--max:1100px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Vazirmatn",Tahoma,sans-serif;color:var(--text);line-height:1.9;overflow-x:hidden;
+  padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0);
+  background:radial-gradient(ellipse at 20% 4%,rgba(79,76,200,.2),transparent 32rem),radial-gradient(ellipse at 100% 45%,rgba(255,95,168,.13),transparent 32rem),radial-gradient(ellipse at 0% 85%,rgba(41,103,220,.14),transparent 30rem),var(--bg)}
+a{color:inherit;text-decoration:none}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main{position:relative;z-index:1}
+a:focus-visible{outline:2px solid var(--cyan);outline-offset:4px;border-radius:8px}
+.container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+.latin{font-family:"JetBrains Mono",ui-monospace,monospace;direction:ltr;unicode-bidi:isolate}
+.gt{color:transparent;background:linear-gradient(100deg,#ff8ac4 0%,#b69cff 50%,#5de1ef 100%);-webkit-background-clip:text;background-clip:text}
+ 
+/* header */
+.site-header{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(7,11,23,.78);border-bottom:1px solid rgba(157,174,230,.08)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font:850 1.35rem "JetBrains Mono",monospace;direction:ltr;letter-spacing:-.08em}
+.brand span{color:var(--pink)}
+.links{display:flex;align-items:center;gap:clamp(14px,3vw,32px);color:var(--muted);font-size:.92rem}
+.links a:hover{color:#fff}
+.links .cta{border:1px solid var(--line);padding:6px 16px;border-radius:999px;color:#fff}
+ 
+/* hero */
+.hero{padding:clamp(48px,8vw,100px) 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:48px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#ff9fcf;font-size:.88rem;font-weight:800}
+.eyebrow::before{content:"";width:26px;height:1px;background:linear-gradient(90deg,var(--pink),var(--cyan))}
+h1{margin:14px 0 6px;font-size:clamp(3.4rem,15vw,6.6rem);line-height:1.1;font-weight:900;letter-spacing:-.03em}
+h1 span{display:block}
+.en{color:var(--muted);font-size:.95rem;margin-bottom:6px}
+.role{font-size:clamp(1.05rem,4.2vw,1.3rem);color:#d4dcf4;margin:14px 0 10px;font-weight:500}
+.role i{font-style:normal;color:var(--muted);padding:0 8px}
+.copy{color:var(--muted);max-width:56ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 20px;border-radius:999px;font-weight:800;font-size:.93rem;border:1px solid transparent;transition:transform .2s,border-color .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn svg{width:19px;height:19px;fill:currentColor;flex:none}
+.p{background:linear-gradient(110deg,var(--pink),var(--purple) 60%,var(--blue));box-shadow:0 8px 30px rgba(255,95,168,.3);color:#fff}
+.o{border-color:rgba(255,138,196,.55);background:rgba(13,20,40,.65)}
+.o:hover{border-color:var(--cyan)}
+ 
+.art{min-height:410px;display:grid;place-items:center;position:relative;isolation:isolate}
+.orb{position:absolute;width:min(60vw,320px);aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,rgba(255,95,168,.85),rgba(132,91,255,.85) 55%,rgba(52,115,255,.85));transform:rotate(-12deg);z-index:-2}
+.orb::before,.orb::after{content:"";position:absolute;inset:-28px;border:1px solid rgba(255,138,196,.45);border-radius:44% 56% 63% 37%/43% 42% 58% 57%;transform:rotate(25deg)}
+.orb::after{inset:-48px;transform:rotate(-28deg);border-color:rgba(93,225,239,.25)}
+.card{width:min(100%,350px);padding:26px;border:1px solid rgba(190,200,255,.2);border-radius:28px;background:linear-gradient(145deg,rgba(19,28,54,.92),rgba(7,11,23,.85));box-shadow:0 30px 90px rgba(0,0,0,.4);backdrop-filter:blur(16px);transform:rotate(-2deg)}
+.top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font:.74rem "JetBrains Mono",monospace;direction:ltr}
+.on{display:inline-flex;align-items:center;gap:7px;color:#a9f5d1}
+.on::before{content:"";width:7px;height:7px;border-radius:50%;background:#54e6a8;box-shadow:0 0 12px #54e6a8}
+.mono{height:170px;display:grid;place-items:center;margin:14px 0;position:relative}
+.mono::before{content:"";position:absolute;width:160px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(164,149,255,.45);box-shadow:0 0 65px rgba(104,91,255,.2),inset 0 0 45px rgba(104,91,255,.1)}
+.mono strong{font:900 5.4rem/1 "JetBrains Mono",monospace;direction:ltr;letter-spacing:-.12em;background:linear-gradient(135deg,#fff,#ffb3da 45%,#b6a5ff 75%,#5de1ef);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lines{display:grid;gap:8px}
+.lines div{height:7px;border-radius:10px;background:rgba(165,180,230,.11);margin-inline-start:auto}
+.lines div:nth-child(1){width:78%}
+.lines div:nth-child(2){width:57%;background:linear-gradient(270deg,rgba(140,107,255,.65),rgba(140,107,255,.08))}
+.lines div:nth-child(3){width:68%}
+.tag{position:absolute;padding:8px 13px;border:1px solid var(--line);border-radius:12px;background:rgba(9,15,31,.92);color:#dce4ff;font-size:.78rem;box-shadow:0 12px 32px rgba(0,0,0,.25)}
+.t1{right:-1%;top:9%}.t2{left:-1%;bottom:9%}
+@media(prefers-reduced-motion:no-preference){.tag{animation:fl 5s ease-in-out infinite}.t2{animation-delay:-2.5s}@keyframes fl{50%{transform:translateY(-8px)}}}
+ 
+/* sections */
+.section{padding:80px 0;border-top:1px solid rgba(157,174,230,.1)}
+h2{margin:10px 0 12px;font-size:clamp(1.9rem,7vw,3rem);line-height:1.3;font-weight:900}
+.intro{color:var(--muted);max-width:60ch}
+.head{margin-bottom:32px}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.about p{color:var(--muted);margin-bottom:14px}
+.about strong{color:#eef0ff}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.pill{padding:6px 14px;border-radius:999px;border:1px solid rgba(255,138,196,.35);background:rgba(18,26,48,.6);color:#d6ddf4;font-size:.84rem}
+ 
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.skill{min-height:120px;padding:18px 10px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(17,26,48,.85),rgba(8,13,26,.75));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;transition:transform .2s,border-color .2s}
+.skill:hover{transform:translateY(-4px);border-color:rgba(255,95,168,.7)}
+.ic{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,rgba(255,95,168,.24),rgba(140,107,255,.14));color:#ff9fcf;font:800 .95rem "JetBrains Mono",monospace;direction:ltr}
+.skill span:last-child{font-size:.86rem;color:#dce3fa}
+ 
+.about>*{min-width:0}
+.win{background:rgba(8,10,28,.86);border:1px solid rgba(255,138,196,.3);border-radius:18px;overflow:hidden;direction:ltr;text-align:left;box-shadow:0 0 60px rgba(255,95,168,.16),10px 10px 0 rgba(140,107,255,.35);backdrop-filter:blur(10px)}
+.bar{display:flex;gap:7px;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.08);font:400 .78rem "JetBrains Mono",monospace;color:#9aa0c8}
+.bar i{width:11px;height:11px;border-radius:50%;background:var(--pink)}.bar i:nth-child(2){background:#ffc857}.bar i:nth-child(3){background:#7bd9a6}
+.bar em{margin-left:8px;font-style:normal}
+.win pre{padding:18px 18px 22px;font:400 clamp(.74rem,3.1vw,.92rem)/1.85 "JetBrains Mono",monospace;overflow-x:auto;color:#e9e6ff}
+.k{color:#c3b6ff}.s{color:#9ee8c0}.n{color:#ffd98a}.f{color:#ff9fcf}
+.cur{display:inline-block;width:8px;height:1em;background:var(--pink);vertical-align:-2px;animation:blink 1s steps(1) infinite}@keyframes blink{50%{opacity:0}}
+/* research */
+.paper{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:26px;border:1px solid rgba(140,107,255,.4);border-radius:var(--r);background:linear-gradient(150deg,rgba(28,24,70,.7),rgba(8,13,26,.85));position:relative;overflow:hidden}
+.paper::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;left:-90px;top:-110px;background:radial-gradient(circle,rgba(93,225,239,.18),transparent 70%)}
+.badge{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--pink),var(--purple));font-size:1.6rem}
+.paper h3{font-size:1.2rem;line-height:1.7;margin-bottom:8px}
+.paper p{color:var(--muted);font-size:.95rem}
+.paper .by{margin-top:10px;color:#ff9fcf;font-size:.9rem}
+ 
+/* contact */
+.contact{text-align:center;padding:84px 0 92px;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;width:520px;height:240px;border:1px solid rgba(140,107,255,.2);border-radius:50%;left:50%;top:38%;transform:translate(-50%,-50%) rotate(-12deg);pointer-events:none;max-width:100%}
+.contact .intro{margin:0 auto}
+.reach{position:relative;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:640px;margin:32px auto 0}
+.row{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:rgba(14,23,43,.78);text-align:start;transition:transform .2s,border-color .2s;min-width:0}
+.row:hover{transform:translateY(-3px);border-color:var(--cyan)}
+.row svg{width:26px;height:26px;fill:#ff9fcf;flex:none}
+.row b{display:block;font-size:.98rem}
+.row small{display:block;color:var(--muted);font:.76rem "JetBrains Mono",monospace;direction:ltr;text-align:right;overflow:hidden;text-overflow:ellipsis}
+ 
+@media(max-width:850px){
+  .hero-grid,.about{grid-template-columns:1fr}
+  .hero-grid{gap:30px}.about{gap:28px}
+  .skills{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:600px){
+  .container{width:calc(100% - 32px)}
+  .links a:not(.cta){display:none}
+  .actions .btn{width:100%}
+  .art{min-height:360px}
+  .section{padding:60px 0}
+  .skills{grid-template-columns:repeat(2,1fr)}
+  .paper{grid-template-columns:1fr}
+  .reach{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+ 
+<header class="site-header">
+  <nav class="nav container" aria-label="منوی اصلی">
+    <a class="brand" href="#home" aria-label="ریحانه اعلمی">R<span>A</span></a>
+    <div class="links">
+      <a href="#about">درباره من</a>
+      <a href="#skills">تخصص‌ها</a>
+      <a href="#research">پژوهش</a>
+      <a class="cta" href="#contact">ارتباط با من</a>
+    </div>
+  </nav>
+</header>
+ 
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">تحلیل داده · RAG · سیستم‌های توصیه‌گر</div>
+      <h1><span>ریحانه</span><span class="gt">اعلمی</span></h1>
+      <div class="en latin">Reyhane Aalami</div>
+      <p class="role">مهندس کامپیوتر <i>/</i> متولد ۱۳۸۵</p>
+      <p class="copy">با تجربه کار در حوزه تحلیل داده، RAG، Recommendation Systems و وب‌اپلیکیشن‌ها، در خدمت شما هستیم. من و تیمم از ایده تا محصول نهایی کنارتان می‌مانیم.</p>
+      <div class="actions">
+        <a class="btn p" href="https://github.com/ReyhaneAalami" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          گیت‌هاب
+        </a>
+        <a class="btn o" href="https://www.linkedin.com/search/results/people/?keywords=Reyhane%20Aalami" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          لینکدین
+        </a>
+      </div>
+    </div>
+ 
+    <div class="art" aria-label="نشان RA">
+      <div class="orb"></div>
+      <div class="tag t1 latin"># data-driven</div>
+      <div class="tag t2 latin">retrieve. rank. recommend.</div>
+      <div class="card">
+        <div class="top"><span>REYHANE.AALAMI</span><span class="on">RAG · RECSYS · DATA</span></div>
+        <div class="mono"><strong>RA</strong></div>
+        <div class="lines" aria-hidden="true"><div></div><div></div><div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="section" id="about">
+  <div class="container about">
+    <div class="win" role="img" aria-label="کارت کد معرفی ریحانه">
+      <div class="bar"><i></i><i></i><i></i><em>reyhane.js</em></div>
+<pre><span class="k">const</span> <span class="f">reyhane</span> = {
+  name:  <span class="s">"Reyhane Aalami"</span>,
+  role:  <span class="s">"Computer Engineer"</span>,
+  born:  <span class="n">1385</span>,
+  focus: [<span class="s">"Data Analysis"</span>, <span class="s">"RAG"</span>,
+          <span class="s">"RecSys"</span>, <span class="s">"Web Apps"</span>],
+  team:  <span class="n">true</span>,
+  motto: <span class="s">"data → insight → impact"</span><span class="cur"></span>
+};</pre>
+    </div>
+    <div>
+      <div class="eyebrow">معرفی</div>
+      <h2>داده‌ها حرف می‌زنند؛ <span class="gt">من ترجمه‌شان می‌کنم.</span></h2>
+      <p>من <strong>ریحانه اعلمی</strong> هستم، مهندس کامپیوتر متولد ۱۳۸۵. کارم این است که از دل داده‌های شلوغ، الگوهایی بیرون بکشم که به تصمیم‌های درست برسند.</p>
+      <p>تنها هم نیستم؛ تیمی دارم که از تحلیل تا پیاده‌سازی همراهم است. پروژه‌ای در ذهن دارید؟ از همین‌جا شروع کنید.</p>
+    </div>
+  </div>
+</section>
+ 
+<section class="section" id="skills">
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow">ابزارهای من</div>
+      <h2>تخصص‌ها و <span class="gt">مهارت‌ها.</span></h2>
+      <p class="intro">از آماده‌سازی داده و ساخت مدل تا جستجوی هوشمند و محصول نهایی.</p>
+    </div>
+    <div class="skills">
+      <div class="skill"><span class="ic">Py</span><span>Python</span></div>
+      <div class="skill"><span class="ic">ML</span><span>یادگیری ماشین</span></div>
+      <div class="skill"><span class="ic">DA</span><span>تحلیل داده</span></div>
+      <div class="skill"><span class="ic">WEB</span><span>وب‌اپلیکیشن</span></div>
+      <div class="skill"><span class="ic">RS</span><span>سیستم‌های توصیه‌گر</span></div>
+      <div class="skill"><span class="ic">RAG</span><span>جستجوی هوشمند (RAG)</span></div>
+      <div class="skill"><span class="ic">UI</span><span>طراحی سایت</span></div>
+    </div>
+  </div>
+</section>
+ 
+<section class="section" id="research">
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow">پژوهش</div>
+      <h2>دانشی که <span class="gt">مستند</span> شده.</h2>
+    </div>
+    <article class="paper">
+      <div class="badge" aria-hidden="true">📄</div>
+      <div>
+        <h3>تحلیل داده‌محور الگوهای مصرف مشتریان و نقش آن در تصمیم‌گیری هوشمند کسب‌وکارها</h3>
+        <p>کنفرانس سالانه ملی فناوری اطلاعات، نانوتکنولوژی، هوش مصنوعی و آینده‌پژوهی فناوری با نمایه و مجوز رسمی؛ برگزاری از پایگاه استنادی علوم جهان اسلام (ISC)، ۱۴۰۵</p>
+        <p class="by">مصطفی دهبانی بصیر، ریحانه اعلمی</p>
+      </div>
+    </article>
+  </div>
+</section>
+ 
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="eyebrow">ایده‌ای دارید؟</div>
+    <h2>بیایید چیزی <span class="gt">ارزشمند</span> بسازیم.</h2>
+    <p class="intro">برای همکاری در پروژه‌های تحلیل داده، RAG، سیستم توصیه‌گر و وب‌اپلیکیشن، من و تیمم در خدمت شما هستیم.</p>
+    <div class="reach">
+      <a class="row" href="mailto:reyhane.aalami17@gmail.com">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A2.5 2.5 0 0 1 4.5 3h15A2.5 2.5 0 0 1 22 5.5v13a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 18.5v-13zm2.3.2 7.7 6 7.7-6H4.3zM20 7.9l-7.4 5.7a1 1 0 0 1-1.2 0L4 7.9v10.6c0 .28.22.5.5.5h15a.5.5 0 0 0 .5-.5V7.9z"/></svg>
+        <span style="min-width:0"><b>ایمیل</b><small>reyhane.aalami17@gmail.com</small></span>
+      </a>
+      <a class="row" href="https://t.me/ReyhaneAalami" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 3.4 2.6 10.8c-1.3.5-1.3 1.3-.2 1.6l4.9 1.5 1.9 5.8c.2.6.1.9.8.9.5 0 .8-.2 1.1-.5l2.4-2.3 4.9 3.6c.9.5 1.5.2 1.8-.8l3.2-15.2c.3-1.3-.5-1.9-1.5-1.5zM8.5 13.3l10.4-6.6c.5-.3.9-.1.6.2l-8.6 7.7-.3 3.7-2.1-5z"/></svg>
+        <span><b>تلگرام</b><small>@ReyhaneAalami</small></span>
+      </a>
+      <a class="row" href="https://github.com/ReyhaneAalami" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        <span><b>گیت‌هاب</b><small>github.com/ReyhaneAalami</small></span>
+      </a>
+      <a class="row" href="https://www.linkedin.com/search/results/people/?keywords=Reyhane%20Aalami" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        <span><b>لینکدین</b><small>Reyhane Aalami</small></span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+ 
+<script>
+/* گراف دانش: گره‌ها و پالس‌های رتبه‌بندی و بازیابی */
+(function(){
+  var c=document.getElementById('bg'),x=c.getContext('2d'),W,H,N=[],Pu=[],m={x:-999,y:-999},E=[];
+  var still=matchMedia('(prefers-reduced-motion:reduce)').matches,cols=['#ff5fa8','#8c6bff','#5de1ef'];
+  function size(){
+    var d=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;c.width=W*d;c.height=H*d;x.setTransform(d,0,0,d,0,0);
+    var n=Math.round(Math.min(72,W*H/12000));N=[];
+    for(var i=0;i<n;i++)N.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,c:cols[i%3],r:1.3+Math.random()*1.7});
+  }
+  function frame(){
+    x.clearRect(0,0,W,H);E=[];
+    for(var i=0;i<N.length;i++){
+      var a=N[i];
+      if(!still){
+        var dx=m.x-a.x,dy=m.y-a.y,d=Math.hypot(dx,dy);
+        if(d<170&&d>1){a.vx+=dx/d*.01;a.vy+=dy/d*.01}
+        a.vx*=.99;a.vy*=.99;a.x+=a.vx;a.y+=a.vy;
+        if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
+      }
+      for(var j=i+1;j<N.length;j++){
+        var b=N[j],l=Math.hypot(a.x-b.x,a.y-b.y);
+        if(l<135){E.push([a,b]);x.globalAlpha=(1-l/135)*.3;x.strokeStyle=a.c;x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke()}
+      }
+      x.globalAlpha=.85;x.fillStyle=a.c;x.beginPath();x.arc(a.x,a.y,a.r,0,6.283);x.fill();
+    }
+    if(!still){
+      if(E.length&&Pu.length<6&&Math.random()<.05)Pu.push({e:E[Math.random()*E.length|0],t:0});
+      x.globalAlpha=1;x.shadowBlur=14;
+      for(var k=Pu.length-1;k>=0;k--){
+        var p=Pu[k],q=p.e,px=q[0].x+(q[1].x-q[0].x)*p.t,py=q[0].y+(q[1].y-q[0].y)*p.t;
+        x.shadowColor=q[0].c;x.fillStyle='#fff';x.beginPath();x.arc(px,py,2.6,0,6.283);x.fill();
+        p.t+=.025;if(p.t>1)Pu.splice(k,1);
+      }
+      x.shadowBlur=0;
+    }
+    x.globalAlpha=1;
+    if(!still)requestAnimationFrame(frame);
+  }
+  function pt(e){var t=e.touches?e.touches[0]:e;m.x=t.clientX;m.y=t.clientY}
+  addEventListener('pointermove',pt);addEventListener('touchmove',pt,{passive:true});
+  addEventListener('resize',function(){size();if(still)frame()});
+  size();frame();
+})();
+</script>
+</body>
+</html>
+ 
+
+
